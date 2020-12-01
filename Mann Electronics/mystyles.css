@@ -1,0 +1,279 @@
+
+/*  predefined Width for all columns using col-"" and all rows */
+
+*{
+  box-sizing: border-box;
+}
+.col-1{width:8.33%;}
+.col-2{width:16.66%;}
+.col-3{width:33.33%;}
+.col-4{width:25%;}
+.col-5{width:41.66%;}
+.col-6{width:50%;}
+.col-7{width:58.33;}
+.col-8{width:66.66%;}
+.col-9{width:75%;}
+.col-10{width:83.33%;}
+.col-11{width:91.66%;}
+.col-1{width:100%;}
+
+[class*="col-"] {
+  float: left;
+  padding: 0;
+  margin: 0;
+  border: 1px solid none;
+}
+.row::after{
+content:"";
+clear: both;
+display: table;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+.row{
+  margin-top: 5%;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+}
+/* NAV */
+
+/*  Unordered list styling - remove style type (bullets), add color (dark gray), hide overflow, remove padding and margins */
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: #333;
+width: 100%;
+}
+
+/*  styling List items - float the list items to the left so they are all inline */
+li{
+  float: left;
+
+}
+
+/*  styling list item a (list item text/link) set the color to white, align text center and remove the underline, adding padding */
+li a{
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+/* List item a (text/link) if hovering over a list item thats not class="active" I.E current page then hover background-color: #111 */
+li a:hover:not(.active){
+  background-color: #111;
+}
+/* for items in the list that are 'active' I.E current page then set the background color of list text to green */
+.active{
+  background-color: #4CAF50
+}
+/* styling the div for drop down to display all items within here as inline block*/
+.navdrop{
+ display: inline-block;
+}
+/* button used for the dropdown option is being style the same as the 'li a' in terms of colors, fonts, text size and padding here is the styling to match the rest of the items in the Nav bar */
+.buttondropdown{
+  background-color: #333;
+  border: none;
+  border-radius: none;
+  color: white;
+  font-family: times;
+  font-size: 16px;
+  padding: 14px 16px;
+}
+/* items/options in the dropdown are being styled to be white and hidden and the min size of 100px to match the button default size*/
+.dropdownitems{
+display: none;
+position: absolute;
+background-color: white;
+min-width: 100px;
+}
+
+/* text/links within the items/options are styled to have black text and display in block, adding padding around the text and removing the underline to improve UI */
+.dropdownitems a {
+  color: black;
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+
+}
+/* when hovering the options the background color should be gray and the text should change to white to show help indicate the option being selected/hovered */
+.dropdownitems a:hover {
+  background-color: gray;
+  color: white;
+}
+
+/* when hovering over the div around that the button is within the dropdown items should no longer be display:none and should display: block (under one another)  z-index: 1 as its needs to be in front of the image not hidden behinde*/
+.navdrop:hover .dropdownitems {
+  display: block;
+    z-index: 1;
+}
+/* when hovering over the div that the button is within the button should become 'black' helping indicate that the button/option is being hovered */
+.navdrop:hover .buttondropdown {
+  background-color: #111;
+}
+/* div for the search bar + button to float right of the navigation bar */
+.divsearch{
+  float: right;
+}
+/* search bar (<input>) has 8px padding border style 3px and rounding the coners (border-radius: 3px) */
+.searchbar{
+  padding: 8px;
+  border-style: outset;
+  border-radius: 3px;
+  width: 200px;
+}
+/* search bar button has no top padding, margin top of 5.5px to inline it with the search bar width of 40px and height of 30px to fit the icon with */
+.searchbtn{
+  padding-top: 0;
+  margin-top: 5.5px;
+  width: 40px;
+  height: 30px;
+}
+
+/*  Home page section */
+/* Home page banner image width to be 100% of browser and the height to be 500px; */
+.bannerimg{
+  width: 100%;
+  height: 500px;
+
+/* A container/section for the banner image, title, opening paragraph to align everything within center */
+}
+.section{
+text-align: center;
+position: relative;
+color: white;
+width: 100%;
+margin: 0;
+padding: 0;
+}
+
+/* Home page title needs to be aligned center using 'georgia font with a size of 70px, transform: translate (-50%, -50%) X Y axis so center */
+.homepagetitle{
+  position: absolute;
+  left: 50%;
+  bottom: 70%;
+  font-family: "georgia";
+  font-size: 70px;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -50%);
+}
+.hpdescription{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0;
+  padding: 0;
+   transform: translate(-50%, -50%);
+}
+.best-seller-title {
+  text-align: center;
+  font-family: "georgia";
+  font-size: 25px;
+  padding: 0px;
+}
+.cph2{
+  text-align: center;
+  font-family: "georgia";
+  font-size: 30px;
+}
+.bestsellerimg{
+  position: block;
+  margin-left: 29.17%;
+  margin-right: 29.17%;
+  width: 150px;
+  height: 150px;
+}
+.best-seller-description{
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30%;
+
+/* FOOTER */
+
+}/* div for the footer only set relevent*/
+.footerparent{
+  position: relative;
+  text-align: center;
+}
+/* footer for all pages, fixed footer color 'dark gray : #333' remove all default padding/margins, width to be 100% of browser */
+footer{
+  bottom: 0;
+  background-color: #333;
+  padding: 0;
+  margin:0;
+  margin-top: 5%;
+  width: 100%;
+  height: 200px;
+}
+.footer-sm-img{
+  margin: 20px 5px 10px 5px;
+  width: 4%;
+}
+.hrlinefooter{
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 20px;
+  width: 10%;
+  color: white;
+
+
+}
+
+
+/* PRODUCTS COLLUMS */
+.producttitle{
+  font-family: georgia;
+  font-size: 50px;
+  text-align: center;
+}
+.productsheadder{
+text-align: center;
+}
+
+
+.productsimg {
+  width: 90%;
+  height: 250px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.productdesc{
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.add-to-basket-btn{
+  height: 40px;
+  width: 35%;
+  border-radius: 5px;
+  margin-right: 32.5%;
+  margin-left: 32.5%;
+  background-color: #8CED57;
+  font-family: georgia;
+  border-style: none;
+  margin-bottom: 50px;
+
+}
+
+.add-to-basket-btn:hover {
+  background-color: #5ABC42;
+  box-shadow: 4px 4px gray;
+
+}
+
+.add-to-basket-btn:focus {
+  outline: none;
